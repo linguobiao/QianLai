@@ -1,0 +1,70 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="layout_4">4dp</dimen>
+    <dimen name="layout_8">8dp</dimen>
+    <dimen name="layout_10">10dp</dimen>
+    <dimen name="layout_12">12dp</dimen>
+    <dimen name="layout_14">14dp</dimen>
+    <dimen name="layout_16">16dp</dimen>
+    <dimen name="layout_18">18dp</dimen>
+    <dimen name="layout_20">20dp</dimen>
+    <dimen name="layout_22">22dp</dimen>
+    <dimen name="layout_24">24dp</dimen>
+
+    <dimen name="text_8">8dp</dimen>
+    <dimen name="text_10">10dp</dimen>
+    <dimen name="text_12">12dp</dimen>
+    <dimen name="text_14">14dp</dimen>
+    <dimen name="text_16">16dp</dimen>
+    <dimen name="text_18">18dp</dimen>
+    <dimen name="text_20">20dp</dimen>
+    <dimen name="text_22">22dp</dimen>
+    <dimen name="text_24">24dp</dimen>
+
+    <dimen name="width_0">0dp</dimen>
+    <dimen name="width_1">1dp</dimen>
+    <dimen name="width_2">2dp</dimen>
+    <dimen name="width_3">3dp</dimen>
+    <dimen name="width_4">4dp</dimen>
+    <dimen name="width_5">5dp</dimen>
+    <dimen name="width_6">6dp</dimen>
+    <dimen name="width_7">7dp</dimen>
+    <dimen name="width_8">8dp</dimen>
+    <dimen name="width_9">9dp</dimen>
+    <dimen name="width_10">10dp</dimen>
+    <dimen name="width_12">12dp</dimen>
+    <dimen name="width_14">14dp</dimen>
+    <dimen name="width_16">16dp</dimen>
+    <dimen name="width_18">18dp</dimen>
+    <dimen name="width_20">20dp</dimen>
+    <dimen name="width_30">30dp</dimen>
+    <dimen name="width_40">40dp</dimen>
+    <dimen name="width_50">50dp</dimen>
+    <dimen name="width_80">80dp</dimen>
+
+    <dimen name="height_0">0dp</dimen>
+    <dimen name="height_1">1dp</dimen>
+    <dimen name="height_2">2dp</dimen>
+    <dimen name="height_3">3dp</dimen>
+    <dimen name="height_4">4dp</dimen>
+    <dimen name="height_5">5dp</dimen>
+    <dimen name="height_6">6dp</dimen>
+    <dimen name="height_7">7dp</dimen>
+    <dimen name="height_8">8dp</dimen>
+    <dimen name="height_9">9dp</dimen>
+    <dimen name="height_10">10dp</dimen>
+    <dimen name="height_12">12dp</dimen>
+    <dimen name="height_14">14dp</dimen>
+    <dimen name="height_16">16dp</dimen>
+    <dimen name="height_18">18dp</dimen>
+    <dimen name="height_20">20dp</dimen>
+    <dimen name="height_30">30dp</dimen>
+    <dimen name="height_40">40dp</dimen>
+    <dimen name="height_50">50dp</dimen>
+    <dimen name="height_55">55dp</dimen>
+
+    <dimen name="paddingLeft">15dp</dimen>
+</resources>

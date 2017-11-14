@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#11000000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+
+    <!--主色-->
+    <color name="color_0085d0">#0085d0</color>
+
+    <!--辅色-->
+    <color name="color_333333">#333333</color>
+    <color name="color_00000000">#00000000</color>
+
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+
+    <color name="seperator_bg">#55000000</color>
+
+
+    <color name="jaf_result_view">#b0000000</color>
+    <color name="jaf_viewfinder_mask">#60000000</color>
+    <color name="jaf_possible_result_points">#c0ffff00</color>
+
+    <color name="jaf_white">#FFFFFF</color>
+    <color name="jaf_text_black">#cc000000</color>
+    <color name="jaf_seperator_bg">#55000000</color>
+    <color name="jaf_text_red">#ff0000</color>
+    <color name="jaf_darkgray">#A9A9A9</color>
+
+    <color name="jaf_side_bar_text">#4A4A4A</color>
+    <color name="jaf_shadow_bg">#66000000</color>
+    <color name="jaf_edit_bg">#EFEFF4</color>
+    <color name="jaf_darker_gray">#9b9b9b</color>
+
+    <color name="jaf_colorPrimary">#3F51B5</color>
+    <color name="jaf_colorPrimaryDark">#303F9F</color>
+    <color name="jaf_colorAccent">#FF4081</color>
+
+    <color name="jaf_pickerview_btn_cancel_color">#999999</color>
+    <color name="jaf_pickerview_btn_confirm_color">#303F9F</color>
+
+</resources>

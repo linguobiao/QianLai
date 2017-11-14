@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">钱来</string>
+    <string name="tip_pay">开启之后才能获取支付信息</string>
+</resources>

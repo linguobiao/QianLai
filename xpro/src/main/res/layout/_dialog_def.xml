@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/_bg_solid_ffffff" >
+
+    <RelativeLayout
+        android:id="@+id/ly_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textSize="@dimen/text_16"
+            android:textColor="@color/color_333333"
+            android:text="标题"/>
+
+        <ImageView
+            android:id="@+id/iv_dialog_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="10dp"
+            android:src="@mipmap/_ic_close"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_dialog_title_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:background="@color/seperator_bg" />
+
+    <LinearLayout
+        android:id="@+id/ly_dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_dialog_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="5dp"
+            android:textSize="@dimen/text_16"
+            android:textColor="@color/color_333333"
+            android:text="内容"
+            android:padding="15dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_dialog_content_line"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/seperator_bg" />
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/ly_dialog_cancel"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@drawable/_bg_stroke_solid_ffffff_0085d0"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_dialog_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:text="取消"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/color_0085d0"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:visibility="visible"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ly_dialog_ok"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:background="@mipmap/_btn_base_blue">
+
+            <TextView
+                android:id="@+id/tv_dialog_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:text="确定"
+                android:textSize="@dimen/text_16"
+                android:textColor="@color/color_ffffff"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:visibility="visible"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
