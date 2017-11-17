@@ -40,10 +40,11 @@ public class NotifyManager {
         }
     }
 
-    public void sendNotify(String value) {
+    public void sendNotify(String value, int payType) {
 //        if (!isBackground) return;
         String content = "";
-        content = App.getInstance().getString(R.string.app_name) + "：微信收款到账" + value + "元";
+        if (payType == Global.PAY_TYPE_WECHAT) content = App.getInstance().getString(R.string.app_name) + "：微信收款到账" + value + "元";
+        else if (payType == Global.PAY_TYPE_ALIPAY) content = App.getInstance().getString(R.string.app_name) + "：支付宝收款到账" + value + "元";
         if (mNotificationManager == null) mNotificationManager = (NotificationManager) App.getInstance().getSystemService(Context.NOTIFICATION_SERVICE);
 
         Notification.Builder builder = new Notification.Builder(App.getInstance())

@@ -9,6 +9,14 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!--&lt;!&ndash; 必选&ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> &lt;!&ndash; 获取网络状态 &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.INTERNET" /> &lt;!&ndash; 网络通信&ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />  &lt;!&ndash; 获取设备信息 &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> &lt;!&ndash; 获取MAC地址&ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> &lt;!&ndash; 读写sdcard，storage等等 &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.RECORD_AUDIO" /> &lt;!&ndash; 允许程序录制音频 &ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.GET_TASKS"/>-->
 
     <application
         android:name=".App"
@@ -18,6 +26,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--&lt;!&ndash; 必选&ndash;&gt;-->
+        <!--<meta-data-->
+            <!--android:name="PGYER_APPID"-->
+            <!--android:value="a6e3d5eda9723052a64cc3ee26b12195" >-->
+        <!--</meta-data>-->
+
         <activity android:name=".main.MainActivity"
             android:launchMode="singleTask">
             <intent-filter>

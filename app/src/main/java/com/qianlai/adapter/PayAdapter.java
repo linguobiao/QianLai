@@ -5,6 +5,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 import com.lgb.xpro.utils.DecimalUtil;
 import com.qianlai.R;
+import com.qianlai.global.Global;
 
 import java.util.List;
 /**
@@ -27,6 +28,9 @@ public class PayAdapter extends BaseMultiItemQuickAdapter<PayAdapter.Bean, BaseV
                 break;
             case Bean.TYPE_TIME:
                 helper.setText(R.id.tv_time, item.getTime());
+                int payType = item.getPayType();
+                if (payType == Global.PAY_TYPE_WECHAT) helper.setText(R.id.tv_type, "微信");
+                else if (payType == Global.PAY_TYPE_ALIPAY) helper.setText(R.id.tv_type, "支付宝");
                 helper.setText(R.id.tv_money, "收款：" + DecimalUtil.df_0_00().format(item.getMoney()) + "元");
                 break;
             case Bean.TYPE_TOTAL:
@@ -47,42 +51,39 @@ public class PayAdapter extends BaseMultiItemQuickAdapter<PayAdapter.Bean, BaseV
         private String date;
         private String time;
         private double money;
+        private int payType;
 
-        public Bean(int type) {
-            this.type = type;
-        }
+        public Bean(int type) {this.type = type;}
 
-        public String getDate() {
-            return date;
-        }
+        public String getDate() {return date;}
 
         public Bean setDate(String date) {
             this.date = date;
             return this;
         }
 
-        public String getTime() {
-            return time;
-        }
+        public String getTime() {return time;}
 
         public Bean setTime(String time) {
             this.time = time;
             return this;
         }
 
-        public double getMoney() {
-            return money;
-        }
+        public double getMoney() {return money;}
 
         public Bean setMoney(double money) {
             this.money = money;
             return this;
         }
 
-        @Override
-        public int getItemType() {
-            return type;
+        public int getPayType() {return payType;}
+
+        public Bean setPayType(int payType) {
+            this.payType = payType;
+            return this;
         }
+
+        @Override public int getItemType() {return type;}
     }
 
 }

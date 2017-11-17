@@ -72,8 +72,8 @@ public class MainActivity extends SimpleBaseActivity {
                 double money = pay.getPayMoney();
                 if (lastTime == -1) {
                     moneyDay = money;
-                    addDate(time, money);
-                    addTime(time, money);
+                    addDate(time);
+                    addTime(time, money, pay.getPayType());
                     lastTime = time;
                     tv_new_money.setText(DecimalUtil.df_0_00().format(money));
                     tv_new_time.setText(TimeUtil.parseTime(time, "yyyy-MM-dd HH:mm:ss"));
@@ -85,12 +85,12 @@ public class MainActivity extends SimpleBaseActivity {
 
                 if (TimeUtil.isSameDay(lastTime, time)) { //同一天
                     moneyDay = moneyDay + money;
-                    addTime(time, money);
+                    addTime(time, money, pay.getPayType());
                 } else {//不同一天
                     addTotal(moneyDay);
                     moneyDay = money;
-                    addDate(time, money);
-                    addTime(time, money);
+                    addDate(time);
+                    addTime(time, money, pay.getPayType());
                 }
                 if (i == size -1) {
                     addTotal(moneyDay);
@@ -101,12 +101,12 @@ public class MainActivity extends SimpleBaseActivity {
         }
     }
 
-    private void addDate(long time, double money) {
+    private void addDate(long time) {
         payList.add(new PayAdapter.Bean(PayAdapter.Bean.TYPE_DATE).setDate(TimeUtil.parseTime(time, "yyyy-MM-dd")));
     }
 
-    private void addTime(long time, double money) {
-        payList.add(new PayAdapter.Bean(PayAdapter.Bean.TYPE_TIME).setTime(TimeUtil.parseTime(time, "HH:mm:ss")).setMoney(money));
+    private void addTime(long time, double money, int type) {
+        payList.add(new PayAdapter.Bean(PayAdapter.Bean.TYPE_TIME).setTime(TimeUtil.parseTime(time, "HH:mm:ss")).setMoney(money).setPayType(type));
     }
 
     private void addTotal(double money) {

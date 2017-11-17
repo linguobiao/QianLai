@@ -25,6 +25,7 @@ public class App extends LitePalApplication {
         LitePal.initialize(this);
         NotifyManager.getInstance().initNotify(this);
         KeyUtil.initSpManager(this);
+//        PgyCrashManager.register(this);
     }
 
     public static App getInstance() {

@@ -6,6 +6,7 @@ package com.qianlai.global;
 
 public class Global {
     public static final int PAY_TYPE_WECHAT = 1;
+    public static final int PAY_TYPE_ALIPAY = 2;
 
 
 }

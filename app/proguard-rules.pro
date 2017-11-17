@@ -24,6 +24,7 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+#-printmapping build/outputs/mapping/release/mapping.txt
 
 #-dontusemixedcaseclassnames
 -dontskipnonpubliclibraryclasses
@@ -141,3 +142,21 @@
 -keep class * extends org.litepal.crud.DataSupport {
     *;
 }
+
+##pgyer
+##-libraryjars libs/pgyer_sdk_x.x.jar
+#-dontwarn com.pgyersdk.**
+#-keep class com.pgyersdk.** { *; }
+#
+##Rxjava
+#-dontwarn sun.misc.**
+#-keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
+# long producerIndex;
+# long consumerIndex;
+#}
+#-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
+# rx.internal.util.atomic.LinkedQueueNode producerNode;
+#}
+#-keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
+# rx.internal.util.atomic.LinkedQueueNode consumerNode;
+#}

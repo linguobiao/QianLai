@@ -1,7 +1,18 @@
 package com.qianlai.util;
 
 import android.util.Log;
+import android.view.accessibility.AccessibilityEvent;
 
+import com.lgb.xpro.utils.AppUtils;
+import com.lgb.xpro.utils.FileHelper;
+import com.qianlai.App;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,5 +49,40 @@ public class StringUtil {
         Log.e("test", "金额：" + money);
         System.out.println(money);
         return money;
+    }
+
+    public static String getContent(AccessibilityEvent event) {
+        List<CharSequence> textList = event.getText();
+        if (textList != null && textList.size() > 0) {
+            String text = textList.get(0).toString();
+            return text;
+        }
+        return null;
+    }
+
+    public static void saveLog(String content, String des) {
+        File file = FileHelper.newFile("payLog.txt");
+        if (file != null) {
+            FileOutputStream fos = null;
+            OutputStreamWriter osw = null;
+            BufferedWriter bw = null;
+            try {
+                fos = new FileOutputStream(file, true);
+                osw = new OutputStreamWriter(fos);
+                bw = new BufferedWriter(osw);
+                StringBuffer value = new StringBuffer();
+                String time = TimeUtil.getCurrentTime("yyyy-MM-dd HH:mm:ss");
+                value.append(AppUtils.getVersionName(App.getInstance())).append("--").append(time).append("--text:").append(content).append(", des:").append(des).append("\r\n");
+                bw.write(value.toString());
+                bw.newLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                FileHelper.flush(bw);
+                FileHelper.close(bw);
+                FileHelper.close(osw);
+                FileHelper.close(fos);
+            }
+        }
     }
 }
