@@ -5,6 +5,7 @@ import android.text.TextUtils;
 
 import com.lgb.xpro.utils.AppUtils;
 import com.lgb.xpro.utils.FileHelper;
+import com.qianlai.global.Global;
 
 import app.framework.util.SpManager;
 
@@ -19,6 +20,8 @@ public class KeyUtil {
     public static final String SP_QIANLAI = "SP_QIANLAI";
     public static final String KEY_VERSION = "KEY_VERSION";
 
+    public static final String KEY_BOUND_MAC = "KEY_BOUND_MAC";
+
     public static void initSpManager(Context context) {
         String lastVersion = SpManager.getInstance().readString(SP_QIANLAI, KEY_VERSION);
         String currentVersion = AppUtils.getVersionName(context);
@@ -27,4 +30,7 @@ public class KeyUtil {
         SpManager.getInstance().writeString(SP_QIANLAI, KEY_VERSION, currentVersion);
         FileHelper.deleteFile(FileHelper.PATH_FILE + "payLog.txt");
     }
+
+    public static String getBoundMac() {return SpManager.getInstance().readString(SP_QIANLAI, KEY_BOUND_MAC);}
+    public static void setBoundMac(String mac) {SpManager.getInstance().writeString(SP_QIANLAI, KEY_BOUND_MAC, mac);}
 }

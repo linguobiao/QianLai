@@ -4,13 +4,19 @@ import android.content.Intent;
 import android.provider.Settings;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.TextView;
 
 import com.lgb.xpro.helper.ToastHelper;
 import com.lgb.xpro.helper.XDialogHelper;
+import com.lgb.xpro.logger.Logger;
+import com.lgb.xpro.permission.AppPermission;
+import com.lgb.xpro.permission.AppPermissionGroup;
+import com.lgb.xpro.permission.AppPermissionListener;
 import com.lgb.xpro.utils.DecimalUtil;
 import com.qianlai.R;
 import com.qianlai.adapter.PayAdapter;
+import com.qianlai.ble.BleManager;
 import com.qianlai.database.model.Pay;
 import com.qianlai.event.PayEvent;
 import com.qianlai.global.Global;
@@ -45,7 +51,7 @@ public class MainActivity extends SimpleBaseActivity {
     @Override
     public void initView() {
         EventBus.getDefault().register(this);
-
+        Logger.e("----MainActivity onCreate----");
         rv_pay.setLayoutManager(new LinearLayoutManager(this));
         payAdapter = new PayAdapter(payList);
         rv_pay.setAdapter(payAdapter);
@@ -57,6 +63,21 @@ public class MainActivity extends SimpleBaseActivity {
 //        else ToastHelper.getInstance().showToast("保存失败");
 
         initList();
+        tv_new_money.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BleManager.getInstance().scan();
+            }
+        });
+    }
+
+    private void initPermission() {
+        AppPermission.build(this,new AppPermissionListener() {
+            @Override
+            public void success() {
+
+            }
+        }, AppPermissionGroup.LOCATION);
     }
 
     private void initList() {
